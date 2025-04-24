@@ -1,0 +1,30 @@
+echo "Enter the number of elements in the first array:"
+read n1
+
+echo "Enter the elements of the first array:"
+for (( i=0; i<n1; i++ ))
+do
+  read arr1[i]
+done
+
+echo "Enter the number of elements in the second array:"
+read n2
+
+echo "Enter the elements of the second array:"
+for (( i=0; i<n2; i++ ))
+do
+  read arr2[i]
+done
+
+echo "Common elements:"
+for (( i=0; i<n1; i++ ))
+do
+  for (( j=0; j<n2; j++ ))
+  do
+    if (( arr1[i] == arr2[j] ))
+    then
+      echo "${arr1[i]}"
+      break  # To avoid printing duplicates
+    fi
+  done
+done
